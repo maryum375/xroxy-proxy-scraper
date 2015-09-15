@@ -1,0 +1,28 @@
+{
+  "name": "xroxy-proxy-scraper",
+  "version": "1.0.0",
+  "description": "A small library providing the ability to scrape xroxy.com proxies easily.",
+  "main": "scraper.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "html",
+    "xroxy",
+    "scraping"
+  ],
+  "author": "Ran Mariuma",
+  "license": "MIT",
+  "dependencies": {
+    "request": "^2.62.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maryum375/xroxy-proxy-scraper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/maryum375/xroxy-proxy-scraper/issues"
+  },
+  "homepage": "https://github.com/maryum375/xroxy-proxy-scraper"
+}
