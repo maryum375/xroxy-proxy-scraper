@@ -1,7 +1,7 @@
 Xroxy-Proxy-Scraper
 =================
 
-lightweight NodeJS library to scrape proxies from xroxy.com
+Lightweight NodeJS library to scrape proxies from xroxy.com
 
 installation
 ---
