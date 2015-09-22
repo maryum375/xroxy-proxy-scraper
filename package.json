@@ -1,6 +1,6 @@
 {
   "name": "xroxy-proxy-scraper",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A small library providing the ability to scrape xroxy.com proxies easily.",
   "main": "scraper.js",
   "scripts": {
