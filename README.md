@@ -18,10 +18,8 @@ var xroxy = require('xroxy-proxy-scraper');
 call the method ```getProxies```
 ```js
 var maxNumberOfProxies = 22;
-xroxy.getProxies(function(proxies){
-    /* Code to be executed when scraping is done successfully */
-}, function(error){
-    /* Code to be executed when scraping failed */
+xroxy.getProxies(function(error,proxies){
+    /* Code to be executed when scraping is done */
 }, maxNumberOfProxies);
 ```
 

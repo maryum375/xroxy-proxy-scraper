@@ -4,7 +4,7 @@
 var request = require('request');
 
 /* Scrapes proxies from xroxy.com, pageNum & proxiesScraped are optional */
-var getProxies = function (successCallback, errorCallback, maxProxiesCount, pageNum, proxiesScraped) {
+var getProxies = function (callback, maxProxiesCount, pageNum, proxiesScraped) {
 
     if (!proxiesScraped) {
         proxiesScraped = {};
@@ -21,7 +21,7 @@ var getProxies = function (successCallback, errorCallback, maxProxiesCount, page
 
     request('http://www.xroxy.com/proxylist.php?type=All_http&pnum=' + pageNum, function (err, res, body) {
         if (!res || res.statusCode != 200) {
-            errorCallback("Response code was not 200");
+            callback("Response code was not 200");
             return;
         }
 
@@ -39,7 +39,7 @@ var getProxies = function (successCallback, errorCallback, maxProxiesCount, page
 
         if (ips.length > 0) {
             if (ports.length == 0 || ports.length != ips.length) {
-                errorCallback("Regex parsing has failed.");
+                callback("Regex parsing has failed.");
                 return;
             }
 
@@ -59,13 +59,13 @@ var getProxies = function (successCallback, errorCallback, maxProxiesCount, page
 
             if (maxProxiesCountReached) {
                 console.log('Reached max requested proxies count.');
-                successCallback(proxiesScraped);
+                callback(null,proxiesScraped);
                 return;
             }
-            getProxies(successCallback, errorCallback, maxProxiesCount, pageNum + 1, proxiesScraped)
+            getProxies(callback, maxProxiesCount, pageNum + 1, proxiesScraped)
         }
         else {
-            successCallback(proxiesScraped)
+            callback(null,proxiesScraped)
         }
 
     })
